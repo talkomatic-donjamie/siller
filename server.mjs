@@ -3,7 +3,7 @@ import express from "express"
 const app = express();
 
 app.get("/", (req, res) => {
-res.sendFile("/home/pi/project/site/index.html")
+res.sendFile("index.html", { root: "/home/pi/project/site" })
 });
 
 app.listen(9000, () => {
