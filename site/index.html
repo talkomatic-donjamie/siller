@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #27ae60;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --table-header-bg: #3498db;
+            --table-even-row: #e8f6f3;
+            --table-odd-row: #ffffff;
+            --container-padding: 20px;
+            --section-margin: 40px 0;
+            --section-title-font-size: 1.8em;
+            --subheading-font-size: 1.5em;
+            --list-spacing: 15px;
+            --blockquote-padding: 20px;
+            --blockquote-border-left: 5px solid var(--accent-color);
+            --blockquote-background: #f9f9f9;
+            --blockquote-font-style: italic;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 995px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .containerpage {
+            max-width: auto;
+            margin: 20px auto;
+            background-color: #d9d9d9;
+            text-align: left;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: var(--container-padding);
+        }
+
+        /* Center images within containerpage */
+        .containerpage img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: var(--section-title-font-size);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: var(--section-title-font-size);
+            color: var(--secondary-color);
+        }
+
+        .verse-reference {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .verse-text {
+            background-color: var(--blockquote-background);
+            border-left: var(--blockquote-border-left);
+            padding: var(--blockquote-padding);
+            margin: 20px 0;
+            font-style: var(--blockquote-font-style);
+        }
+
+        .verse-interpretation {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .write-up-content ul,
+        .plan-writeup ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .write-up-content li,
+        .plan-writeup li {
+            margin-bottom: 10px;
+        }
+
+        .impact-ecosystem p {
+            padding: 10px 0;
+            line-height: 1.8;
+        }
+
+        .plan-writeup p {
+            margin-bottom: 10px;
+        }
+
+        .abiotic-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--list-spacing);
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .abiotic-list li {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .abiotic-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container {
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--table-even-row);
+        }
+
+        tr:nth-child(odd) {
+            background-color: var(--table-odd-row);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .abiotic-list li {
+                font-size: 0.9em;
+            }
+
+            .write-up-content ul,
+            .plan-writeup ul {
+                padding-left: 15px;
+            }
+
+            .verse-text {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>example</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Example</h2>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>example</th>
+                            <th>example</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="containerpage write-up-content">
+                    <h2 class="section-title">Write Up</h2>
+                    <ul>
+                        <li><strong>example:</strong> example</li>
+                        
+                    </ul>
+                </div>
+                <br><br>
+
+                <h2>example</h2>
+                <ul class="abiotic-list">
+                    <li>example</li>
+                </ul>
+                <br><br>
+                
+                <div class="containerpage">
+                    <h2>example pic</h2>
+                    <img src="./PXL_20241104_210125531.jpg" alt="example" width="500" height="600">
+                </div>
+                <br><br>
+
+                <div class="containerpage">
+                    <h2>example</h2>
+                    <img src="./PXL_20241101_181757908.jpg" alt="example" width="300" height="400">
+                </div>
+            </section>
+            <br>
+            <section>
+                <h2>example</h2>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>example</th>
+                           
+                        </tr>
+                        <tr>
+                            <td>example</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>example</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>example</td>
+                            
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="containerpage impact-ecosystem">
+                    <h2>example</h2>
+                    <p>example</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
